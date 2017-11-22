@@ -1,7 +1,7 @@
 #聊天室: 运用设计模式进行重构
 
 ##项目简介
-![GUI](https://github.com/justPlay197/DesignPattern/blob/master/images/GUI.png)
+![GUI](/Users/yuliu/Downloads/DesignPattern-master/images/GUI.png)
 
 本项目实现的是一个在线聊天室，实现在线用户之间信息交换的功能。
 
@@ -17,7 +17,7 @@
 
 因为ChatClient和FileClient里面的方法太过于相似了，都是构造、发送、监听、运行、停止等，所以抽象出了一个ClientBasic基类，其中的send方法包含init初始化和print发送到socket两个部分，所以定义为模板方法，两个子类只需要重载init和printToSocket两个函数即可。
 
-![StencilPattern](https://github.com/justPlay197/DesignPattern/blob/master/images/StencilPattern.png)
+![StencilPattern](/Users/yuliu/Downloads/DesignPattern-master/images/StencilPattern.png)
 
 
 ```java
@@ -80,7 +80,7 @@
 ###简单工厂模式
 客户端交互分发送文件和发送信息两种类型，对应着ChatClient和FileClient两个类，他们都继承自同一个名字为ClientBasic的抽象类，那么我们就可以创造一个工厂类，对客户端屏蔽创建逻辑，只是通过一个共同的接口来新建对象，如factory.getClient(ClientName);,如果我们将来有发送图片或者发送视频，也可以只修改工厂创建接口就可以方便的调用。
 
-![FactoryPattern](https://github.com/justPlay197/DesignPattern/blob/master/images/FactoryPattern.jpg)
+![FactoryPattern](/Users/yuliu/Downloads/DesignPattern-master/images/FactoryPattern.jpg)
 
 
 ```java
@@ -125,7 +125,7 @@
 
 主服务器负责处理数据的有FileServer和ChatServer两个类，分别处理文件传输和信息传输，监听端口分别为8080和8081，一台服务器上只能存在一个FileServer和ChatServer，否则就会导致系统紊乱，在每次创建子线程的时候，子线程中都要有一个FileServer或者ChatServer，为了确保安全，决定采用单例模式。
 
-![SinglePattern](https://github.com/justPlay197/DesignPattern/blob/master/images/SinglePattern.jpg)
+![SinglePattern](/Users/yuliu/Downloads/DesignPattern-master/images/SinglePattern.jpg)
 
 ```java
 	//ChatServer.java：ChatServer单例模式实现
@@ -147,7 +147,7 @@
 
 在服务器上运行的程序有一个数组就是客户端集，针对这同一个数组集合在不同的条件下往往有不同的标准，如在群聊中需要过滤掉自己，在P2P聊天中需要过滤掉所有的其他人，在上线时需要获得所有的在线用户信息，在下线时需要过滤掉所有不包含自己的客户端。那么我们就可以使用过滤器模式，构造一个接口，其中有一个过滤的函数，在不同的情况下可以有不同的实现在获取自己想要的子集。
 
-![FileterPattern](https://github.com/justPlay197/DesignPattern/blob/master/images/FilterPattern.png)
+![FileterPattern](/Users/yuliu/Downloads/DesignPattern-master/images/FilterPattern.png)
 
 ```java
 	//ChatCriteria.java：ChatCriteria接口代码实现
@@ -242,19 +242,19 @@
 ###代码结构改进
 重构前客户端代码结构
 
-![ClientBeforeRefactor](https://github.com/justPlay197/DesignPattern/blob/master/images/ClientBeforeRefactor.png)
+![ClientBeforeRefactor](/Users/yuliu/Downloads/DesignPattern-master/images/ClientBeforeRefactor.png)
 
 重构后客户端代码结构
 
-![ClientAfterRefactor](https://github.com/justPlay197/DesignPattern/blob/master/images/ClientAfterRefactor.png)
+![ServerBeforeRefactor](/Users/yuliu/Downloads/DesignPattern-master/images/ClientAfterRefactor.png)
 
 重构前服务器端代码结构
 
-![ServerBeforeRefactor](https://github.com/justPlay197/DesignPattern/blob/master/images/ServerBeforeRefactor.png)
+![ServerAfterRefactor](/Users/yuliu/Downloads/DesignPattern-master/images/ServerBeforeRefactor.png)
 
 重构后服务器端代码结构
 
-![ServerAfterRefactor](https://github.com/justPlay197/DesignPattern/blob/master/images/ServerAfterRefactor.png)
+![ServerAfterRefactor](/Users/yuliu/Downloads/DesignPattern-master/images/ServerAfterRefactor.png)
 
 
 ###修正bug
@@ -274,11 +274,11 @@
 
     cd server
     javac *.java
-	cd ..
-	cd client
-	javac *.java -classpath .:beautyeye_lnf.jar
-	cd ..
-	javac *.java
+    cd ..
+    cd client
+    javac *.java -classpath .:beautyeye_lnf.jar
+    cd ..
+    javac *.java
 
 启动服务器
 
@@ -287,9 +287,3 @@
 启动客户端
 
 	java -classpath .:client/beautyeye_lnf.jar ClientMain
-
-###团队成员
-
-夏佳昊	1452806
-
-陈东仪	1450126
