@@ -1,6 +1,7 @@
 #聊天室: 运用设计模式进行重构
 
 ##项目简介
+
 ![GUI](/Users/yuliu/GitHub/DesignPatternProject/images/GUI.png)
 
 
@@ -289,3 +290,7 @@
 启动客户端
 
 	java -classpath .:client/beautyeye_lnf.jar ClientMain
+
+### GitHub
+
+源码已经上传与GitHub:https://github.com/pudongqi/DesignPatternProject
