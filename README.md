@@ -1,7 +1,7 @@
 #聊天室: 运用设计模式进行重构
 
 ##项目简介
-![Alt text](https://github.com/pudongqi/DesignPatternProject/tree/master/images/GUI.png)
+![GUI](/Users/yuliu/GitHub/DesignPatternProject/images/GUI.png)
 
 
 
