@@ -1,7 +1,9 @@
 #聊天室: 运用设计模式进行重构
 
 ##项目简介
-![GUI](/Users/yuliu/GitHub/DesignPatternProject/images/GUI.png)
+![Alt text](https://github.com/pudongqi/DesignPatternProject/tree/master/images/GUI.png)
+
+
 
 本项目实现的是一个在线聊天室，实现在线用户之间信息交换的功能。
 
