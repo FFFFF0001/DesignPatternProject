@@ -291,6 +291,3 @@
 
 	java -classpath .:client/beautyeye_lnf.jar ClientMain
 
-### GitHub
-
-源码已经上传与GitHub:https://github.com/pudongqi/DesignPatternProject
